@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Colores</title>
+</head>
+<body>
+    <div id="div1" style="width: 200px; height: 200px; background-color: blue; margin: 10px;"></div>
+    <div id="div2" style="width: 200px; height: 200px; background-color: red; margin: 10px;"></div>
+    <div id="div3" style="width: 200px; height: 200px; background-color: green; margin: 10px;"></div>
+    <div id="div4" style="width: 200px; height: 200px; background-color: yellow; margin: 10px;"></div>
+
+    <script>
+        const divs = document.querySelectorAll('div');
+        
+        divs.forEach(div => {
+            div.addEventListener('click', function() {
+                this.style.backgroundColor = 'black';
+            });
+        });
+    </script>
+</body>
+</html>

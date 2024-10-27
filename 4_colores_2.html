@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores con Teclas</title>
+</head>
+<body>
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border: 1px solid black; margin: 10px;"></div>
+
+    <script>
+        let globalColor = '';
+        const keyDiv = document.getElementById('key');
+
+        document.addEventListener('keydown', function(event) {
+            switch(event.key.toLowerCase()) {
+                // Cambiar color del div existente
+                case 'a':
+                    globalColor = 'pink';
+                    keyDiv.style.backgroundColor = globalColor;
+                    break;
+                case 's':
+                    globalColor = 'orange';
+                    keyDiv.style.backgroundColor = globalColor;
+                    break;
+                case 'd':
+                    globalColor = 'lightblue';
+                    keyDiv.style.backgroundColor = globalColor;
+                    break;
+
+                // Crear nuevos divs
+                case 'q':
+                    createNewDiv('purple');
+                    break;
+                case 'w':
+                    createNewDiv('gray');
+                    break;
+                case 'e':
+                    createNewDiv('brown');
+                    break;
+            }
+        });
+
+        function createNewDiv(color) {
+            const newDiv = document.createElement('div');
+            newDiv.style.width = '200px';
+            newDiv.style.height = '200px';
+            newDiv.style.backgroundColor = color;
+            newDiv.style.margin = '10px';
+            newDiv.style.border = '1px solid black';
+            document.body.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
